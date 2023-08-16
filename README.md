@@ -10,45 +10,45 @@ An entity-relationship diagram was created to help design the system, as shown b
 ![](img/der.png)
 
 
-A empresa cliente informou que os seguintes dados precisam ser armazenados no sistema:
+The client company informed us that the following data needs to be stored in the system:
 
-+	**Time**
-    * Identificador 
-    * Nome
-    * Lista de Jogadores
-    * Lista de Torcedores
++	**Team**
+    * Identifier
+    * Name
+    * Players List
+    * Fans List
 
-+ **Jogador**
-    * Identificador 
-    * Nome
-    * Posição
-    * Documento
-    * Time no qual trabalha
++ **Player**
+    * Identifier 
+    * Name
+    * Position
+    * Document
+    * The team which they work for
 
-+ **Documento**
-    * Identificador 
++ **Document**
+    * Identifier
     * CPF
-    * Número da Carteira de Trabalho
-	* Número CBF
+    * Work Card Number
+	* CBF Number
 	
-**Atenção:** *não inclua* um mapeamento reverso entre Documento e Jogador (ou seja, o Jogador tem um Documento, mas o Documento não tem um Jogador).
+**Attention:** *do not include* a reverse mapping between Document and Player (tha is, the Player has a Document, but the Document does not have a Player).
 
-+ **Torcedor**
-    * Identificador 
-    * Nome
++ **Fan**
+    * Identifier 
+    * Name
 
-Por fim, foi definido que o identificador de cada entidade deve ser gerado automaticamente pelo sistema.
+Finally, it was defined that the identifier of each entity must be generated automatically by the system.
 
-**Sua tarefa nesta demanda é construir um sistema, utilizando o framework hibernate, em que seja possível realizar operações de CRUD (CREATE, READ, UPDATE, DELETE) para todas as entidades listadas, conforme a especificação levantada.**
+**Your task in this quest is to build a system, using the hibernate framework, in which it is possible perform CRUD operations (CREATE, READ, UPDATE, DELETE) to all the listed entities, accoriding to the raised specification.**
 
-Para isso, você terá que:
+ Fot this, you will have to:
 
-1. Criar todas as classes Data Access Object (DAO)
-2. Criar todas as classes Entity
+1. Create all Data Access Object (DAO) classes
+2. Create all Entity classes
 
-### Dicas
-1.  Analise o diagrama de entidade relacionamento e veja quais classes será necessário criar.
-2. Analise o relacionamento entre as entidades, com base nela você irá escolher as anotações do hibernate que serão necessárias:
+### Hints
+1.  Review the entity relationship diagram and see which classes you will need to create.
+2. Analyze the relationship between the entities, based on it you will choose the hibernate annotations that will be needed:
 
 ```java
 @OnetoOne
@@ -57,10 +57,10 @@ Para isso, você terá que:
 @ManyToMany
 ```
 
-3. Como boa prática, faça camadas diferentes para responsabilidade. Por exemplo, utilize um pacote chamado dao para as classes que representem o Data Access Object.
-4. Utilize o conceito de Herança para implementar as classes de Data Access Object.
+3. As a good practice, make different layers for accountability. For example, use a package called dao for classes that represent the Data Access Object.
+4. Use the concept of Inheritance to implement Data Access Object classes.
 
 
-Depois que você implementar esse desafio, terá feito um processo similar à construção de sistemas do mundo real, modelando os dados e construindo as operações para acesso a eles. Legal, né? #VQV
+After you implement this challenge, you will have gone through a process similar to building real-world systems, modeling the data, and building the operations to access it. Cool huh? #LETSGO
 
 ---
