@@ -9,6 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.rangel.dao.FanDao;
+import com.rangel.model.Fan;
+
 public class FanDaoTest {
 
     private FanDao fanDao;
@@ -76,7 +79,7 @@ public class FanDaoTest {
 
         Fan fan = this.fanDao.list().get(0);
 
-        this.fanDao.deletar(fan.getId());
+        this.fanDao.delete(fan.getId());
 
         // VERIFICATION OF EXPECTED RESULT
         List<Fan> resultList = this.fanDao.list();
@@ -88,7 +91,7 @@ public class FanDaoTest {
         List<Fan> fans = this.fanDao.list();
 
         for (Fan player : fans) {
-            this.fanDao.deletar(player.getId());
+            this.fanDao.delete(player.getId());
         }
     }
 
