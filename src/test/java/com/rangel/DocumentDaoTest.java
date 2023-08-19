@@ -8,12 +8,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.rangel.dao.DocumentDao;
+import com.rangel.model.Document;
+
 public class DocumentDaoTest {
 
     private DocumentDao documentDao;
 
     public DocumentDaoTest() {
-        this.documentDao = new DocumentDaoTest();
+        this.documentDao = new DocumentDao();
     }
 
     @BeforeEach
@@ -57,14 +60,14 @@ public class DocumentDaoTest {
     public void mustEdit() {
         this.documentDao.save(this.createObject("544", "544554454", "787"));
 
-        Document result = this.documentDao.listar().get(0);
+        Document result = this.documentDao.list().get(0);
 
         result.setCpf("11111");
 
         this.documentDao.edit(result);
 
         // VERIFICATION OF EXPECTED RESULT
-        List<Document> resultList = this.documentDao.listar();
+        List<Document> resultList = this.documentDao.list();
 
         assertEquals(1, resultList.size());
         assertEquals("544", resultList.get(0).getWordCardNumber());
@@ -78,12 +81,12 @@ public class DocumentDaoTest {
     public void mustDelete() {
         this.documentDao.save(this.createObject("544", "544554454", "787"));
 
-        Document result = this.documentDao.listar().get(0);
+        Document result = this.documentDao.list().get(0);
 
         this.documentDao.delete(result.getId());
 
         // VERIFICATION OF EXPECTED RESULT
-        List<Document> resultList = this.documentDao.listar();
+        List<Document> resultList = this.documentDao.list();
 
         assertEquals(0, resultList.size());
 
