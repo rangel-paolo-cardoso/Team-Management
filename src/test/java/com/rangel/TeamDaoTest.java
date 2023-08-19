@@ -11,7 +11,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.rangel.dao.FanDao;
+import com.rangel.dao.TeamDao;
 import com.rangel.model.Fan;
+import com.rangel.model.Team;
 
 public class TeamDaoTest {
 
