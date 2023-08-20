@@ -8,8 +8,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.rangel.dao.DocumentDao;
+import com.rangel.dao.PlayerDao;
 import com.rangel.dao.TeamDao;
 import com.rangel.model.Document;
+import com.rangel.model.Player;
+import com.rangel.model.Team;
 
 public class PlayerDaoTest {
 
@@ -176,9 +179,9 @@ public class PlayerDaoTest {
     private Document createDocument(String workCardNumber, String cpf, String cbfNumber) {
         Document document = new Document();
         System.out.println(workCardNumber);
-        document.setNumeroCarteiraTrabalho(workCardNumber);
+        document.setWorkCardNumber(workCardNumber);
         document.setCpf(cpf);
-        document.setNumeroCbf(cbfNumber);
+        document.setCbfNumber(cbfNumber);
         this.documentDao.save(document);
 
         return this.documentDao.list().get(0);
