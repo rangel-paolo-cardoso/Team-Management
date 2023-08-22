@@ -70,9 +70,9 @@ public class DocumentDaoTest {
         List<Document> resultList = this.documentDao.list();
 
         assertEquals(1, resultList.size());
-        assertEquals("544", resultList.get(0).getWordCardNumber());
+        assertEquals("544", resultList.get(0).getWorkCardNumber());
         assertEquals("11111", resultList.get(0).getCpf());
-        assertEquals("787", resultList.get(0).geCbfNumber());
+        assertEquals("787", resultList.get(0).getCbfNumber());
 
     }
 
@@ -102,7 +102,7 @@ public class DocumentDaoTest {
 
     private Document createObject(String workCardNumber, String cpf, String cbfNumber) {
         Document document = new Document();
-        document.setWordCardNumber(workCardNumber);
+        document.setWorkCardNumber(workCardNumber);
         document.setCpf(cpf);
         document.setCbfNumber(cbfNumber);
 

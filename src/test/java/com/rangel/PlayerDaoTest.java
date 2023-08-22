@@ -1,5 +1,8 @@
 package com.rangel;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
@@ -55,7 +58,7 @@ public class PlayerDaoTest {
         assertEquals(1, result.size());
         assertEquals("Player", result.get(0).getName());
         assertEquals("Striker", result.get(0).getPosition());
-        assertEquals("Team A", result.get(0).getTime().getName());
+        assertEquals("Team A", result.get(0).getTeam().getName());
 
     }
 
@@ -91,7 +94,6 @@ public class PlayerDaoTest {
             assertEquals("Striker", result.get(i).getPosition());
             assertNotNull(result.get(i).getTeam());
             assertNotNull(result.get(i).getDocument());
-
         }
     }
 
@@ -104,7 +106,7 @@ public class PlayerDaoTest {
 
         player.setName("Player B");
 
-        this.playerDao.editar(player);
+        this.playerDao.edit(player);
 
         // VERIFICATION OF EXPECTED RESULT
         List<Player> resultList = this.playerDao.list();
