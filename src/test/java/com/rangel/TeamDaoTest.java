@@ -11,8 +11,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.rangel.dao.FanDao;
+import com.rangel.dao.PlayerDao;
 import com.rangel.dao.TeamDao;
 import com.rangel.model.Fan;
+import com.rangel.model.Player;
 import com.rangel.model.Team;
 
 public class TeamDaoTest {
@@ -186,23 +188,23 @@ public class TeamDaoTest {
         }
     }
 
-    private Team createObject(String nome, List<Player> jogadores, List<Fan> torcedores) {
+    private Team createObject(String name, List<Player> players, List<Fan> fans) {
         Team time = new Team();
-        time.setName(nome);
-        time.setJogadores(jogadores);
-        time.setTorcedores(torcedores);
+        time.setName(name);
+        time.setPlayers(players);
+        time.setFans(fans);
 
         return time;
     }
 
     @SuppressWarnings("unused")
     private List<Player> createPlayers(Integer qtd) {
-        List<Player> jogadores = new ArrayList<>();
+        List<Player> players = new ArrayList<>();
 
         for (int x = 0; x < qtd; x++) {
-            Player jogador = new Player();
-            jogador.setName(PRE_FIXO_JOGADOR + x);
-            this.playerDao.save(jogador);
+            Player player = new Player();
+            player.setName(PRE_FIX_PLAYER + x);
+            this.playerDao.save(player);
         }
 
         return this.playerDao.list();
@@ -210,12 +212,12 @@ public class TeamDaoTest {
 
     @SuppressWarnings("unused")
     private List<Fan> createFan(Integer qtd) {
-        List<Fan> torcedores = new ArrayList<>();
+        List<Fan> fans = new ArrayList<>();
 
         for (int x = 0; x < qtd; x++) {
-            Fan torcedor = new Fan();
-            torcedor.setName(PRE_FIXO_TORCEDOR + x);
-            this.fanDao.save(torcedor);
+            Fan fan = new Fan();
+            fan.setName(PRE_FIX_FAN + x);
+            this.fanDao.save(fan);
         }
 
         return this.fanDao.list();
