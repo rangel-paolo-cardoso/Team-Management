@@ -8,7 +8,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identifier;
+    private Integer id;
     private String name;
     private String position;
     private Document document;
@@ -16,20 +16,20 @@ public class Player {
 
     public Player() {}
 
-    public Player(Long identifier, String name, String position, Document document, Team team) {
-        this.identifier = identifier;
+    public Player(Integer id, String name, String position, Document document, Team team) {
+        this.id = id;
         this.name = name;
         this.position = position;
         this.document = document;
         this.team = team;
     }
 
-    public Long getIdentifier() {
-        return identifier;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdentifier(Long identifier) {
-        this.identifier = identifier;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
