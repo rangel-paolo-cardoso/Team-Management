@@ -10,7 +10,7 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identifier;
+    private Integer id;
     private String name;
 
     private List<Player> players;
@@ -19,19 +19,19 @@ public class Team {
     public Team() {
     }
 
-    public Team(Long identifier, String name, List<Player> players, List<Fan> fans) {
-        this.identifier = identifier;
+    public Team(Integer id, String name, List<Player> players, List<Fan> fans) {
+        this.id = id;
         this.name = name;
         this.players = players;
         this.fans = fans;
     }
 
-    public Long getIdentifier() {
-        return identifier;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdentifier(Long identifier) {
-        this.identifier = identifier;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -8,22 +8,22 @@ public class Fan {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long identifier;
+    private Integer id;
     private String name;
 
     public Fan() {}
 
-    public Fan(Long identifier, String name) {
-        this.identifier = identifier;
+    public Fan(Integer id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public Long getIdentifier() {
-        return identifier;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdentifier(Long identifier) {
-        this.identifier = identifier;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
