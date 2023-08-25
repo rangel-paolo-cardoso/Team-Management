@@ -21,7 +21,7 @@ public class DocumentDao extends GenericDao<Document, Integer> {
     @Override
     public List<Document> list() {
         List<Document> documents;
-        TypedQuery<Document> query = em.createQuery("SELECR d FROM d", Document.class);
+        TypedQuery<Document> query = em.createQuery("SELECR d FROM Document d", Document.class);
         documents = query.getResultList();
         return documents;
     }

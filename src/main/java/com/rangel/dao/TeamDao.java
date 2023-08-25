@@ -21,7 +21,7 @@ public class TeamDao extends GenericDao<Team, Integer> {
     @Override
     public List<Team> list() {
         List<Team> teams;
-        TypedQuery<Team> query = em.createQuery("SELECR t FROM t", Team.class);
+        TypedQuery<Team> query = em.createQuery("SELECR t FROM Team t", Team.class);
         teams = query.getResultList();
         return teams;
     }
