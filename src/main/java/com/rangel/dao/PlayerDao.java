@@ -21,7 +21,7 @@ public class PlayerDao extends GenericDao<Player, Integer> {
     @Override
     public List<Player> list() {
         List<Player> players;
-        TypedQuery<Player> query = em.createQuery("SELECT p FROM p", Player.class);
+        TypedQuery<Player> query = em.createQuery("SELECT p FROM Player p", Player.class);
         players = query.getResultList();
         return players;
     }

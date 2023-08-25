@@ -21,7 +21,7 @@ public class FanDao extends GenericDao<Fan, Integer> {
     @Override
     public List<Fan> list() {
         List<Fan> fans;
-        TypedQuery<Fan> query = em.createQuery("SELECT f FROM f", Fan.class);
+        TypedQuery<Fan> query = em.createQuery("SELECT f FROM Fan f", Fan.class);
         fans = query.getResultList();
         return fans;
     }
